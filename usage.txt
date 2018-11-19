@@ -1,0 +1,30 @@
+ /$$   /$$            /$$$$$$   /$$$$$$   /$$$$$$              /$$
+| $$  /$$/           /$$__  $$ /$$__  $$ /$$__  $$            | $$
+| $$ /$$/   /$$$$$$ | $$  \__/| $$  \__/| $$  \__/  /$$$$$$  /$$$$$$
+| $$$$$/   /$$__  $$| $$$$    | $$$$    | $$       |____  $$|_  $$_/
+| $$  $$  | $$  \ $$| $$_/    | $$_/    | $$        /$$$$$$$  | $$
+| $$\  $$ | $$  | $$| $$      | $$      | $$    $$ /$$__  $$  | $$ /$$
+| $$ \  $$|  $$$$$$/| $$      | $$      |  $$$$$$/|  $$$$$$$  |  $$$$/
+|__/  \__/ \______/ |__/      |__/       \______/  \_______/   \___/
+
+Usage: koffcat.py -t target -p port
+---------------------------------------------
+-l     --listen          listen on
+                         [host]:[port] for
+                         incoming connections
+-e     --execute         execute the given
+                         file upon receiving
+                         a connection
+-c     --command         initialize command
+                         shell
+-u     --upload          upon receiving
+                         connection upload a
+                         file and writing to
+                         [destination]
+---------------------------------------------
+Examples:
+
+koffcat -t 192.168.0.1 -p 5555 -l -c
+koffcat -t 192.168.0.1 -p 5555 -l -u=/home/user/target.sh
+koffcat -t 192.168.0.1 -p 5555 -l -e="cat /etc/paswd"
+print echo "XYZ" | koffcat -t 192.168.0.1 -p 5555
